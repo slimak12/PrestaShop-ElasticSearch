@@ -534,6 +534,15 @@ class ElasticSearchFilter extends AbstractFilter
                     )
                 );
             }
+            
+            
+          $query_main_cat = array(
+                'term' => array(
+                    'categories' => $this->id_category
+                )
+            );
+          array_push($query['bool']['should'],$query_main_cat);
+            
 
         } else {
             $query = array(
